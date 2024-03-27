@@ -33,14 +33,7 @@ describe('Ultimate QA Site Tests', () => {
      })
     });
   
-    // Assuming there are sortable tables and clickable elements to test
-    /*it('Interacts with and verifies dynamic table content', () => {
-      cy.get('a[href*="tables"]').click(); // Adjust the href value as necessary
-      cy.url().should('include', '/tables');
-      // Implement table interaction and verification
-    });
-  
-    // Additional tests go here*/
+    
   });
   
   
