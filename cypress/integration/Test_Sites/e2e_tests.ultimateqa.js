@@ -3,12 +3,11 @@
 describe('Ultimate QA Site Tests', () => {
     
   
-    /*it('Navigates to the Automation page and verifies key links', () => {
+    it('Navigates to the Automation page and verifies key links', () => {
       cy.visit('https://ultimateqa.com/automation');
       cy.url().should('include', '/automation');
       cy.get('#menu-item-218108 > a').should('exist');
       cy.get('a[href*="fake-landing-page"]').should('exist');
-      // Add more links as needed
     });
   
     it('Submits a form successfully on the Fake Landing Page', () => {
@@ -30,7 +29,7 @@ describe('Ultimate QA Site Tests', () => {
 
 
      })
-    });*/
+    });
     it("Create new account",() => {
 
         cy.visit("https://courses.ultimateqa.com/users/sign_up") 

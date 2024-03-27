@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-03-27T07:29:40.781Z",
+    "end": "2024-03-27T07:34:00.390Z",
+    "duration": 259609,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e2a481e6-7e5e-4397-aadc-a1a0b85bf59d",
+      "title": "",
+      "fullFile": "cypress\\integration\\Test_Sites\\e2e_tests.ultimateqa.js",
+      "file": "cypress\\integration\\Test_Sites\\e2e_tests.ultimateqa.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "46bc3369-1a92-431c-bec8-0affeb9df888",
+          "title": "Ultimate QA Site Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigates to the Automation page and verifies key links",
+              "fullTitle": "Ultimate QA Site Tests Navigates to the Automation page and verifies key links",
+              "timedOut": null,
+              "duration": 9275,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://ultimateqa.com/automation');\ncy.url().should('include', '/automation');\ncy.get('#menu-item-218108 > a').should('exist');\ncy.get('a[href*=\"fake-landing-page\"]').should('exist');",
+              "err": {},
+              "uuid": "386ea445-601e-4066-8f92-4069680b42b5",
+              "parentUUID": "46bc3369-1a92-431c-bec8-0affeb9df888",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Submits a form successfully on the Fake Landing Page",
+              "fullTitle": "Ultimate QA Site Tests Submits a form successfully on the Fake Landing Page",
+              "timedOut": null,
+              "duration": 75419,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://ultimateqa.com/automation');\ncy.get('.et_pb_text_inner > ul > :nth-child(2) > a').click();\ncy.url().should('include', '/fake-landing-page');\ncy.get('#menu-main-menu > #menu-item-217945 > a').click();\ncy.origin('https://forms.clickup.com', () => {\n  cy.get('#control-0').type('John Doe');\n  cy.get('#control-1').type('john.doe@example.com');\n  cy.get('#control-2').type('QA');\n  cy.get('#control-3').type('PWC');\n  cy.get('[data-test=\"select__dropdown__toggle\"]').click();\n  cy.get(':nth-child(2) > .cu-select-option > .cu-custom-fields__dropdown-item > .cu-custom-fields__dropdown-text').click();\n  cy.get('#control-5').type(\"Thank you\");\n  cy.pause();\n  cy.get('[data-test=\"form__submit-btn\"]').click();\n  cy.get('h2.ql-align-center').should(\"contain\", \"Thank You!\");\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `h2.ql-align-center`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `h2.ql-align-center`, but never found it.\n    at Context.eval (webpack://cypressproject/./cypress/integration/Test_Sites/e2e_tests.ultimateqa.js:18:9)",
+                "diff": null
+              },
+              "uuid": "b18ebd4a-b5b6-4344-a3a6-ee44c18928b6",
+              "parentUUID": "46bc3369-1a92-431c-bec8-0affeb9df888",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create new account",
+              "fullTitle": "Ultimate QA Site Tests Create new account",
+              "timedOut": null,
+              "duration": 11175,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://courses.ultimateqa.com/users/sign_up\");\ncy.get('#user\\\\[first_name\\\\]').type('Tom');\ncy.get('#user\\\\[last_name\\\\]').type('Jones');\ncy.get('#user\\\\[email\\\\]').type(\"tomjones@fly.com\");\ncy.get('#user\\\\[password\\\\]').type(\"password123\");\ncy.get(\"#user\\\\[terms\\\\]\").check();\ncy.get('.form__button-group .button').click();",
+              "err": {},
+              "uuid": "633b56b8-238e-4700-96a8-2af662651206",
+              "parentUUID": "46bc3369-1a92-431c-bec8-0affeb9df888",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "386ea445-601e-4066-8f92-4069680b42b5",
+            "633b56b8-238e-4700-96a8-2af662651206"
+          ],
+          "failures": [
+            "b18ebd4a-b5b6-4344-a3a6-ee44c18928b6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 95869,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

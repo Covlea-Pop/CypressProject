@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-27T07:29:12.938Z",
+    "end": "2024-03-27T07:29:31.182Z",
+    "duration": 18244,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "783ffd1a-aea3-4ebf-bd5e-3212fd050676",
+      "title": "",
+      "fullFile": "cypress\\integration\\Test_Sites\\e2e_tests.the-internet.js",
+      "file": "cypress\\integration\\Test_Sites\\e2e_tests.the-internet.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "11146d97-da42-4eae-9d6c-4a782805665f",
+          "title": "The-Internet Herokuapp Site Tests ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfully logs in",
+              "fullTitle": "The-Internet Herokuapp Site Tests  Successfully logs in",
+              "timedOut": null,
+              "duration": 3886,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/login');\ncy.get('#username').type('tomsmith');\ncy.get('#password').type('SuperSecretPassword!');\ncy.get('.fa.fa-2x.fa-sign-in').click();\ncy.get('#flash').should('contain', 'You logged into a secure area!');\ncy.get('.button').click();",
+              "err": {},
+              "uuid": "f8883136-6ff5-44ee-be75-910e5b0e1de5",
+              "parentUUID": "11146d97-da42-4eae-9d6c-4a782805665f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Toggles checkboxes",
+              "fullTitle": "The-Internet Herokuapp Site Tests  Toggles checkboxes",
+              "timedOut": null,
+              "duration": 1353,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com');\ncy.get(':nth-child(6) > a').click();\ncy.get('input[type=\"checkbox\"]').first().check().should('be.checked');\ncy.get('input[type=\"checkbox\"]').last().uncheck().should('not.be.checked');",
+              "err": {},
+              "uuid": "21e3ef59-7a27-4a3d-935f-b1da073456ca",
+              "parentUUID": "11146d97-da42-4eae-9d6c-4a782805665f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Interacts with JS Alert",
+              "fullTitle": "The-Internet Herokuapp Site Tests  Interacts with JS Alert",
+              "timedOut": null,
+              "duration": 528,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/javascript_alerts');\ncy.contains('Click for JS Alert').click();\ncy.on('window:alert', str => {\n  expect(str).to.equal('I am a JS Alert');\n});\ncy.on('window:confirm', () => true);\ncy.get('#result').should('contain', 'You successfully clicked an alert');",
+              "err": {},
+              "uuid": "8f6938bc-63b8-49ba-bea1-7a72273c8f4d",
+              "parentUUID": "11146d97-da42-4eae-9d6c-4a782805665f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Selects an option from the dropdown",
+              "fullTitle": "The-Internet Herokuapp Site Tests  Selects an option from the dropdown",
+              "timedOut": null,
+              "duration": 542,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/dropdown');\ncy.get('#dropdown').select('Option 1').should('have.value', '1');",
+              "err": {},
+              "uuid": "98df7dae-54f7-4174-bd73-9471c58fa7f2",
+              "parentUUID": "11146d97-da42-4eae-9d6c-4a782805665f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Waits for dynamically loaded elements",
+              "fullTitle": "The-Internet Herokuapp Site Tests  Waits for dynamically loaded elements",
+              "timedOut": null,
+              "duration": 5468,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/dynamic_loading/2');\ncy.contains('Start').click();\ncy.get('#loading').should('be.visible');\ncy.get('#finish').should('contain', 'Hello World!');",
+              "err": {},
+              "uuid": "cbc75b8a-b7eb-40c3-8f44-c366d2e329f7",
+              "parentUUID": "11146d97-da42-4eae-9d6c-4a782805665f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Accesses the Floating Menu page and verifies menu visibility on scroll",
+              "fullTitle": "The-Internet Herokuapp Site Tests  Accesses the Floating Menu page and verifies menu visibility on scroll",
+              "timedOut": null,
+              "duration": 1732,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/');\ncy.get('#content > ul > li:nth-child(19) > a').click();\ncy.get('#menu > ul > li:nth-child(1) > a').should('be.visible');\ncy.get('#menu > ul > li:nth-child(2) > a').should('be.visible');\ncy.get('#menu > ul > li:nth-child(3) > a').should('be.visible');\ncy.get('#menu > ul > li:nth-child(4) > a').should('be.visible');\ncy.scrollTo('bottom');\ncy.go('back');",
+              "err": {},
+              "uuid": "3df1fe2d-bced-4625-90d3-f437b250abd1",
+              "parentUUID": "11146d97-da42-4eae-9d6c-4a782805665f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f8883136-6ff5-44ee-be75-910e5b0e1de5",
+            "21e3ef59-7a27-4a3d-935f-b1da073456ca",
+            "8f6938bc-63b8-49ba-bea1-7a72273c8f4d",
+            "98df7dae-54f7-4174-bd73-9471c58fa7f2",
+            "cbc75b8a-b7eb-40c3-8f44-c366d2e329f7",
+            "3df1fe2d-bced-4625-90d3-f437b250abd1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13509,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

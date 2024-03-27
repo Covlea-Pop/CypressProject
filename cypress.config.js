@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'qtzffo',
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
@@ -19,7 +20,13 @@ module.exports = defineConfig({
     video: true, // Enable video recording
     screenshotsFolder: 'cypress/screenshots',
     videosFolder: 'cypress/videos',
-    reporter: 'mochawesome', // Use 'mochawesome' for more detailed reporting
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: false,
+      json: true
+    }, // Use 'mochawesome' for more detailed reporting
 
     // Customizing the test runner
     viewportWidth: 1280,
