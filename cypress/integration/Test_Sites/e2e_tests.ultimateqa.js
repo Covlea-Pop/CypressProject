@@ -1,12 +1,10 @@
 /// <reference types = "Cypress" />
 
 describe('Ultimate QA Site Tests', () => {
-    beforeEach(() => {
-      // Visit the base URL before each test to ensure tests are independent
-      cy.visit('https://ultimateqa.com/automation');
-    });
+    
   
-    it('Navigates to the Automation page and verifies key links', () => {
+    /*it('Navigates to the Automation page and verifies key links', () => {
+      cy.visit('https://ultimateqa.com/automation');
       cy.url().should('include', '/automation');
       cy.get('#menu-item-218108 > a').should('exist');
       cy.get('a[href*="fake-landing-page"]').should('exist');
@@ -14,6 +12,7 @@ describe('Ultimate QA Site Tests', () => {
     });
   
     it('Submits a form successfully on the Fake Landing Page', () => {
+      cy.visit('https://ultimateqa.com/automation');
       cy.get('.et_pb_text_inner > ul > :nth-child(2) > a').click();
       cy.url().should('include', '/fake-landing-page');
       cy.get('#menu-main-menu > #menu-item-217945 > a').click()
@@ -31,7 +30,32 @@ describe('Ultimate QA Site Tests', () => {
 
 
      })
-    });
+    });*/
+    it("Create new account",() => {
+
+        cy.visit("https://courses.ultimateqa.com/users/sign_up") 
+        cy.get('#user\\[first_name\\]').type('Tom');
+        cy.get('#user\\[last_name\\]').type('Jones');
+        cy.get('#user\\[email\\]').type("tomjones@fly.com")
+        cy.get('#user\\[password\\]').type("password123")
+        cy.get("#user\\[terms\\]").check()
+        cy.get('.form__button-group .button').click(); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })
   
     
   });

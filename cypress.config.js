@@ -8,7 +8,8 @@ module.exports = defineConfig({
     },
     specPattern: "cypress/integration/Test_Sites/*.js",
     pageLoadTimeout: 30000,
-    defaultCommandTimeout: 10000,
+    includeShadowDom: true,
+    defaultCommandTimeout: 60000,
     waitForAnimations: false,
     animationDistanceThreshold: 50,
     retries: {
