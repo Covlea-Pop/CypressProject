@@ -53,18 +53,7 @@ describe('Ultimate QA Site Tests', () => {
       cy.get(':nth-child(4) > .formkit-input').type("0045777845")
       cy.get('.formkit-submit > span').click()
 
-
-
-
-
-
-
-
-
-
     })
-  
-    
   });
   
   

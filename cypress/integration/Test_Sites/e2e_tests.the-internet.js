@@ -2,7 +2,7 @@
 
 
 describe('The-Internet Herokuapp Site Tests ', () => {
-    it('Successfully logs in', () => {
+     it('Successfully logs in', () => {
       cy.visit('https://the-internet.herokuapp.com/login');
       cy.get('#username').type('tomsmith');
       cy.get('#password').type('SuperSecretPassword!');
@@ -10,13 +10,13 @@ describe('The-Internet Herokuapp Site Tests ', () => {
       cy.get('#flash').should('contain', 'You logged into a secure area!');
       cy.get('.button').click()
     });
-    it('Toggles checkboxes', () => {
+     it('Toggles checkboxes', () => {
         cy.visit('https://the-internet.herokuapp.com');
         cy.get(':nth-child(6) > a').click()
         cy.get('input[type="checkbox"]').first().check().should('be.checked');
         cy.get('input[type="checkbox"]').last().uncheck().should('not.be.checked');
       });
-    it('Interacts with JS Alert', () => {
+     it('Interacts with JS Alert', () => {
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts');
         cy.contains('Click for JS Alert').click();
         cy.on('window:alert', (str) => {
@@ -25,18 +25,18 @@ describe('The-Internet Herokuapp Site Tests ', () => {
         cy.on('window:confirm', () => true); 
         cy.get('#result').should('contain', 'You successfully clicked an alert');
       });
-    it('Selects an option from the dropdown', () => {
+     it('Selects an option from the dropdown', () => {
         cy.visit('https://the-internet.herokuapp.com/dropdown');
         cy.get('#dropdown').select('Option 1').should('have.value', '1');
       });
-    it('Waits for dynamically loaded elements', () => {
+      it('Waits for dynamically loaded elements', () => {
         cy.visit('https://the-internet.herokuapp.com/dynamic_loading/2');
         cy.contains('Start').click();
         cy.get('#loading').should('be.visible');
         cy.get('#finish').should('contain', 'Hello World!');
       });
     
-    it('Accesses the Floating Menu page and verifies menu visibility on scroll', () => {
+       it('Accesses the Floating Menu page and verifies menu visibility on scroll', () => {
           cy.visit('https://the-internet.herokuapp.com/');
           cy.get('#content > ul > li:nth-child(19) > a').click();
           cy.get('#menu > ul > li:nth-child(1) > a').should('be.visible');
@@ -45,7 +45,20 @@ describe('The-Internet Herokuapp Site Tests ', () => {
           cy.get('#menu > ul > li:nth-child(4) > a').should('be.visible');
           cy.scrollTo('bottom');
           cy.go('back');
+
+      
         });
+
+        it("Forgot Password",() => {
+
+          cy.visit("https://the-internet.herokuapp.com/")
+          cy.get("div.row:nth-child(2) div.large-12.columns:nth-child(2) ul:nth-child(4) li:nth-child(20) > a:nth-child(1)").click()
+          cy.get("#email").type("testing123@mailinator.com")
+          cy.get("#form_submit").click()
+          cy.get("body:nth-child(2) > h1:nth-child(1)").should("contain", "Internal Server Error")
+          
+
+        })
       });
 
       
