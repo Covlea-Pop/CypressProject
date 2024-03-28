@@ -3,7 +3,7 @@
 describe('Ultimate QA Site Tests', () => {
     
   
-    it('Navigates to the Automation page and verifies key links', () => {
+   it('Navigates to the Automation page and verifies key links', () => {
       cy.visit('https://ultimateqa.com/automation');
       cy.url().should('include', '/automation');
       cy.get('#menu-item-218108 > a').should('exist');
@@ -41,9 +41,17 @@ describe('Ultimate QA Site Tests', () => {
         cy.get('.form__button-group .button').click(); 
 
 
+    })
+    it("Get Early Access to Academy",() => {
 
-
-
+      cy.visit("https://ultimateqa.com/automation")
+      cy.get('#menu-main-menu > #menu-item-217931 > a').click()
+      cy.get('.formkit-signup').click()
+      cy.get(':nth-child(1) > .formkit-input').type("Tom")
+      cy.get(':nth-child(2) > .formkit-input').type("Joe")
+      cy.get(':nth-child(3) > .formkit-input').type("tomjon@mailinator.com")
+      cy.get(':nth-child(4) > .formkit-input').type("0045777845")
+      cy.get('.formkit-submit > span').click()
 
 
 
