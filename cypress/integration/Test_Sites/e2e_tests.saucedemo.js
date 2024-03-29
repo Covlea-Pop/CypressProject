@@ -47,7 +47,7 @@ describe('Saucedemo Site Tests', () => {
 
   it('Custom Command: Use custom login command', () => {
     it('Logs in using the custom command', () => {
-      cy.login('standard_user', 'secret_sauce'); // Use the custom 'login' command
+      cy.login('standard_user', 'secret_sauce'); 
       cy.url().should('include', '/inventory.html');
     });
   });

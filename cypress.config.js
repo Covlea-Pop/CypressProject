@@ -4,7 +4,7 @@ module.exports = defineConfig({
   projectId: 'qtzffo',
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      
       
     },
     specPattern: "cypress/integration/Test_Sites/*.js",
@@ -14,10 +14,10 @@ module.exports = defineConfig({
     waitForAnimations: false,
     animationDistanceThreshold: 50,
     retries: {
-      runMode: 2, // Retry failed tests on CI twice
-      openMode: 0, // Do not retry failed tests while interacting with the Test Runner
+      runMode: 2, 
+      openMode: 0, 
     },
-    video: true, // Enable video recording
+    video: true, 
     screenshotsFolder: 'cypress/screenshots',
     videosFolder: 'cypress/videos',
     reporter: 'mochawesome',
@@ -26,18 +26,18 @@ module.exports = defineConfig({
       overwrite: false,
       html: false,
       json: true
-    }, // Use 'mochawesome' for more detailed reporting
+    }, 
 
-    // Customizing the test runner
+    
     viewportWidth: 1280,
     viewportHeight: 720,
 
    
 
-    // Security settings
-    chromeWebSecurity: false, // Disable for certain cross-origin iframe issues, use with caution
+    
+    chromeWebSecurity: false,
 
-    // Modify browser launch options
+  
     
     
     
